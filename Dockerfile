@@ -32,8 +32,10 @@ LABEL io.k8s.description="Platform for building and running Node.js applications
 COPY ./s2i/ $STI_SCRIPTS_PATH
 COPY ./contrib/ /opt/app-root
 
+RUN yum -y install urw-fonts
+
 RUN /opt/app-root/etc/install_node.sh
-  
+
 USER 1001
 
 # Set the default CMD to print the usage
