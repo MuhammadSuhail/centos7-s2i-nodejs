@@ -35,7 +35,8 @@ COPY ./contrib/ /opt/app-root
 RUN yum -y install urw-fonts
 
 RUN /opt/app-root/etc/install_node.sh
-
+RUN mkdir public
+RUN chmod 777 public
 USER 1001
 
 # Set the default CMD to print the usage
